@@ -40,6 +40,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ArtiklDialogComponent } from './components/dialogs/artikl-dialog/artikl-dialog.component';
+import { DobavljacDialogComponent } from './components/dialogs/dobavljac-dialog/dobavljac-dialog.component';
+import { PorudzbinaDialogComponent } from './components/dialogs/porudzbina-dialog/porudzbina-dialog.component';
+import { StavkaPorudzbineDialogComponent } from './components/dialogs/stavka-porudzbine-dialog/stavka-porudzbine-dialog.component';
 
 
 
@@ -55,7 +59,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ArtiklComponent,
     DobavljacComponent,
     PorudzbinaComponent,
-    StavkaPorudzbineComponent
+    StavkaPorudzbineComponent,
+    ArtiklDialogComponent,
+    DobavljacDialogComponent,
+    PorudzbinaDialogComponent,
+    StavkaPorudzbineDialogComponent
   ],
   imports: [
     BrowserModule,

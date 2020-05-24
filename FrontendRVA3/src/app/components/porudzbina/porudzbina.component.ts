@@ -5,6 +5,8 @@ import { Porudzbina } from 'src/app/models/porudzbina';
 import { MatPaginator } from '@angular/material/paginator';
 import { PorudzbinaService } from 'src/app/services/porudzbina.service';
 import { MatDialog } from '@angular/material/dialog';
+import { PorudzbinaDialogComponent } from '../dialogs/porudzbina-dialog/porudzbina-dialog.component';
+import { Dobavljac } from 'src/app/models/dobavljac';
 
 @Component({
   selector: 'app-porudzbina',
@@ -53,7 +55,20 @@ export class PorudzbinaComponent implements OnInit {
      this.dataSource.sort = this.sort;
    });
 
- }
+  }
+
+  public openDialog(flag: number, id?: number, datum?: Date, isporuceno?: Date, placeno?: boolean, iznos?: number, dobavljac?: Dobavljac ) {
+    const dialogRef = this.dialog.open(PorudzbinaDialogComponent,
+       { data: { id, datum, isporuceno, placeno, iznos, dobavljac  } });
+    dialogRef.componentInstance.flag = flag;
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === 1){
+         this.loadData();
+      }
+
+    });
+  }
 
   selectRow(row: any){
    this.selektovanaPorudzbina = row;
