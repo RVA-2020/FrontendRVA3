@@ -15,6 +15,7 @@ import { Artikl } from 'src/app/models/artikl';
   styleUrls: ['./stavka-porudzbine.component.css']
 })
 export class StavkaPorudzbineComponent implements OnInit, OnChanges {
+
   displayedColumns = ['id', 'redniBroj', 'kolicina', 'jedinicaMere', 'cena', 'porudzbina', 'artikl', 'actions'];
   dataSource: MatTableDataSource<StavkaPorudzbine>;
 
